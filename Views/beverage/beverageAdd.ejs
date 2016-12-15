@@ -1,0 +1,23 @@
+<%- include("../includes/header.ejs", {title:"Add New Beverage"}); %>
+<h1>Add New Beverage</h1>
+<form action="/beverage/insert" method="get">
+    Name: <input id="name" name="name" type="text" />
+    <br />
+    <br />
+    Type: <input id="type" name="type" type="text" />
+    <br />
+    <br />
+    Specific Type: <input id="s_type" name="s_type" type="text" />
+    <br />
+    <br />
+    ABV%: <input id="ABV" name="ABV" type="text" />
+    <br />
+    <br />
+    Price: <input id="price" name="price" type="text" />
+
+    <br/>
+    <br/>
+    <input type="submit" />
+
+</form>
+<%- include("../includes/footer.ejs"); %>

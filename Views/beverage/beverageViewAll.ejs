@@ -1,0 +1,25 @@
+<%- include("../includes/header.ejs", {title:"Beverage's - View All"}); %>
+<h1>Re-Up Beverage's</h1>
+<a href="/beverage/add">Add New Beverage</a><br />
+<br />
+
+<table border="1">
+    <tr><th>Name</th><th>Typer</th><th>Specific Type</th><th>ABV%</th><th>Price</th><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/beverage/?bev_id=<%= result[i].bev_id %>"><%= result[i].name %></a></td>
+        <td><%= result[i].type %></td>
+        <td><%= result[i].s_type %></td>
+        <td><%= result[i].ABV %></td>
+        <td><%= result[i].price %></td>
+        <td><form action="/beverage/delete/">
+                <input type="hidden" name="bev_id" id="bev_id" value="<%= result[i].bev_id %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+<br/>
+<a href="/"><< back</a>
+<%- include("../includes/footer.ejs"); %>

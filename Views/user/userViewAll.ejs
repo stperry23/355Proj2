@@ -1,0 +1,25 @@
+<%- include("../includes/header.ejs", {title:"User's - View All"}); %>
+<h1>Re-Up User's</h1>
+<a href="/user/add">Add New User</a><br />
+<br />
+
+<table border="1">
+    <tr><th>Name</th><th>Email</th><th>Age</th><th>Street</th><th>Zip Code</th><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/user/?user_id=<%= result[i].user_id %>"><%= result[i].uname %></a></td>
+        <td><%= result[i].email %></td>
+        <td><%= result[i].age %></td>
+        <td><%= result[i].street %></td>
+        <td><%= result[i].zip_u %></td>
+        <td><form action="/user/delete/">
+                <input type="hidden" name="user_id" id="user_id" value="<%= result[i].user_id %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+<br/>
+<a href="/"><< back</a>
+<%- include("../includes/footer.ejs"); %>

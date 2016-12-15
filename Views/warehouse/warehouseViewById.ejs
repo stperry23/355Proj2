@@ -1,0 +1,10 @@
+<%- include("../includes/header.ejs", {title:"Warehouse - " + result[0].name_w}); %>
+<h1>Warehouse</h1>
+<ul>
+    <li>Zip Code: <%= result[0].zip_w%></li>
+    <li>Location: <%= result[0].name_w%></li>
+
+</ul>
+<a href="/warehouse/all"><< back</a>
+
+<%- include("../includes/footer.ejs"); %>

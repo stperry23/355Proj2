@@ -1,0 +1,48 @@
+<%- include("../includes/header.ejs", {title:"Add New User"}); %>
+<h1>Add New User</h1>
+<form action="/user/insert" method="get">
+    Name: <input id="uname" name="uname" type="text" />
+    <br />
+    <br />
+    Email: <input id="email" name="email" type="text" />
+    <br />
+    <br />
+    Age: <input id="age" name="age" type="text" />
+    <br />
+    <br />
+    Street: <input id="street" name="street" type="text" />
+    <br />
+    <br />
+    Zip Code: <br>
+    <select id="zip_u" name="zip_u" text="text">
+        <% for(var i=0; warehouse.length > i; i++ ) { %>
+        <option value="<%= warehouse[i].zip_w %>"><%= warehouse[i].zip_w %></option>
+        <% } %>
+    </select>
+    <br />
+    <br />
+    Warehouse: <br>
+    <select id="ware_id" name="ware_id" text="text">
+        <% for(var i=0; warehouse.length > i; i++ ) { %>
+        <option value="<%= warehouse[i].ware_id %>"><%= warehouse[i].name_w %></option>
+        <% } %>
+    </select>
+
+    <!-- Initialize the multiselect plugin: -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#ware_id').multiselect();
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#zip_u').multiselect();
+        });
+    </script>
+
+    <br/>
+    <br/>
+    <input type="submit" />
+
+</form>
+<%- include("../includes/footer.ejs"); %>

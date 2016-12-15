@@ -1,0 +1,13 @@
+<%- include("../includes/header.ejs", {title:"User - " + result[0].uname}); %>
+<h1>User</h1>
+<ul>
+    <li>User ID: <%= result[0].user_id%></li>
+    <li>Name: <%= result[0].uname %></li>
+    <li>Email: <%= result[0].email %></li>
+    <li>Age: <%= result[0].age %></li>
+    <li>Street: <%= result[0].street %></li>
+    <li>Zip Code: <%= result[0].zip_u %></li>
+</ul>
+<a href="/user/all"><< back</a>
+
+<%- include("../includes/footer.ejs"); %>
